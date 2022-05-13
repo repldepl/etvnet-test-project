@@ -46,9 +46,11 @@ function App() {
   return (
     <div className="App">
       <h1 className="App-header">Employees</h1>
-      <button className="App-button" onClick={fetchEmployees}>
-        GET
-      </button>
+      {state === initialState && (
+        <button className="App-button" onClick={fetchEmployees}>
+          GET
+        </button>
+      )}
       {state.isLoading && <div className="App-status">{"Loading"}</div>}
       {state.hasError && (
         <div className="App-error">{"Something went wrong"}</div>
